@@ -1,0 +1,67 @@
+#login{
+    background-image: url(../../assets/Images/Desktop.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+    .auth-card{
+        background-color: #31595193;
+         border-radius: 16px;
+    }
+    .text{
+        color: rgba(239, 155, 40, 1);
+    position: relative;
+    &::after{
+        content: "";
+        width:16px;
+        height: 4px;
+        background-color:  rgba(239, 155, 40, 1);
+        position: absolute;
+        top:100%;
+        left: 1px;
+    }
+}
+    label{
+        color: #EF9B28;
+    }
+    .btn-main{
+        background-color: #EF9B28;
+        color: white;
+        border-radius: 96px;
+        padding: 0.7rem 0px;
+        text-align: center;
+        font-size: 20px;
+        transition: all 1s;
+        border: none;
+        margin-top: 14px;
+    }
+    // .transparent-input .mat-input-element {
+    //     background-color: transparent !important; /* Makes the input background transparent */
+    //     border: none; /* Optional: removes the border if needed */
+    //     box-shadow: none; /* Optional: removes the shadow if needed */
+    //     color: #000; /* Sets the text color, adjust as needed */
+    // }
+    .show-password{
+        position: absolute;
+        left:97%;
+        bottom: 12px;
+        font-size: 20px;
+    }
+    input::matInput{
+        background-color: transparent !important;
+    }
+    .custom-input .mat-input-element {
+        background-color: transparent; /* Transparent background */
+        border: 1px solid #ccc; /* Add a border */
+        border-radius: 4px; /* Rounded corners */
+        padding: 10px; /* Padding inside the input */
+        color: #333; /* Text color */
+        font-size: 16px; /* Font size */
+    }
+    
+    /* Customize the label */
+    .custom-input .mat-form-field-label {
+        color: #666; /* Label color */
+    }
+

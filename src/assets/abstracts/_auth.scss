@@ -1,0 +1,35 @@
+#auth{
+   background-image: url(../../assets/Images/background-auth.png);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+  overflow: auto;
+   //position: fixed;
+   //width:100% !important;
+ 
+}
+// .auth-background{
+//     position: relative;
+// }
+.auth-logo{
+    top: 20px;
+   
+}
+.btn-auth{
+    position: absolute;
+    top: 65% !important;
+    margin-top: 10px;
+    left:48%
+    
+}
+.btn-main{
+    background-color: #EF9B28;
+    color: white;
+    border-radius: 96px;
+    border:#EF9B28 solid ;
+    margin: 7px 0px;
+    padding: 5px 40px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}

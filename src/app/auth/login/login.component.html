@@ -1,0 +1,49 @@
+<section id="login">
+<div class="container h-100 d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="text-center">
+            <img src="../../../assets/Images/logo.svg">
+        </div>
+        <div class="col-md-12 pt-3">
+            <form class="" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <div class="auth-card p-5">
+                    <span class="text-white">Welcome to PMS</span><br>
+                    <span class="text fw-bold">Login</span>
+                    <div class="pt-3">
+                        <label class="pb-2">E-mail</label>
+                        <mat-form-field class="w-100 custom-input">
+                            <mat-label>Enter your email</mat-label>
+                            <input formControlName="email" matInput placeholder="Enter your E-mail" required >
+                          </mat-form-field>
+                          <div *ngIf="loginForm.controls['email'].errors&&loginForm.controls['email'].touched" class="w-100 p-1">
+                            <p class="text-danger" *ngIf="loginForm.controls['email'].errors['required']">email is required</p>
+                            <p class="text-danger" *ngIf="loginForm.controls['email'].errors['email']">Email should be valid mail</p>
+
+                          </div>
+                    </div>
+                    <div class="">
+                        <label class="pb-2">Password</label>
+                        <mat-form-field class="w-100">
+                            <mat-label>Enter your Password</mat-label>
+                            <input class="position-relative" formControlName="password" matInput placeholder="Enter your Password" required [type]="hide ? 'password' :'text'">
+                            <a class="show-password" (click)="hide = !hide">
+                                <i class="fa-solid icon" [class]="hide ? 'fa-eye-slash' : 'fa-eye'"></i>
+                            </a>
+                          </mat-form-field>
+                          <div *ngIf="loginForm.controls['password']?.errors&&loginForm.controls['password']?.touched" class="w-100 p-1">
+                            <p class="text-danger" *ngIf="loginForm.controls['password'].errors?.['required']">password is required</p>
+                            <p class="text-danger" *ngIf="loginForm.controls['password'].errors?.['pattern']">Password should be start small capital</p>
+
+                          </div>
+                    </div>
+                    <div class="d-flex justify-content-between text-white">
+                        <a routerLink="/auth/register">Register Now ?</a><a routerLink="/auth/forgot-password">Forget Password ?</a>
+                    </div>
+                    <button [disabled]="loginForm.invalid" class="btn-main w-100 ">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</div>
+</section>
