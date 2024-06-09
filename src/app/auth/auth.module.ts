@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { AppRoutingModule } from '../app-routing.module';
     ForgotPasswordComponent,
     ResetPasswordComponent,
     AuthComponent,
+    VerifyUserComponent,
+    ChangePasswordComponent,
     
   ],
   imports: [

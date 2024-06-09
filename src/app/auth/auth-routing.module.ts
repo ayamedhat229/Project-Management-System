@@ -5,6 +5,8 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthComponent } from './auth/auth.component';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'authentication',pathMatch:'full'},
@@ -12,7 +14,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'forgot-password',component:ForgotPasswordComponent},
-  {path:'reset-password',component:ResetPasswordComponent}
+  {path:'reset-password',component:ResetPasswordComponent},
+  {path:'verifyUser',component:VerifyUserComponent},
+  {path:'change-password',component:ChangePasswordComponent}
   
 ];
 

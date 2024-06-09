@@ -1,0 +1,36 @@
+<section class="bg-white px-0 w-100">
+<div class="row shadow-sm align-items-center justify-content-between">
+    <div class="col-md-6 ">
+     <img src="../../../assets/Images/logonav.svg" height="75px" width="30%"  alt="">
+    </div>
+    <div class="col-md-6">
+        <div class="d-flex  justify-content-end align-items-center">
+          <i class="fa-solid fa-bell fs-3 pe-2"></i>
+          <img src="../../../assets/Images/testimonial-4.jpg" class="pic">
+          <h6 class="mt-1 ps-3 pt-3">{{userName}}
+            <br>  <p class="fw-light">{{userEmail}}</p>
+          </h6>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon><span class="material-symbols-outlined ">
+              expand_more</span></mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon><span class="material-symbols-outlined icon">lock_open</span></mat-icon>
+              <span>Change Password</span>
+            </button>
+            <button mat-menu-item >
+              <mat-icon><span class="material-symbols-outlined icon">
+                account_box
+                </span></mat-icon>
+              <span>Profile</span>
+            </button>
+            <button mat-menu-item (click)="myLogout()">
+              <mat-icon><span class="material-symbols-outlined icon">logout</span></mat-icon>
+              <span>Logout</span>
+            </button>
+          </mat-menu>
+    </div>
+    </div>
+</div>
+</section>

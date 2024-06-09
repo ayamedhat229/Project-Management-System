@@ -7,10 +7,23 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { ToastrModule} from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+import { DeleteTaskComponent } from './delete-task/delete-task.component';
 
 @NgModule({
   declarations: [
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent,
+    HomeComponent,
+   
    
   ],
   imports: [
@@ -19,7 +32,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    NgxDropzoneModule,
+    MatDialogModule,
     ReactiveFormsModule,
+    MatMenuModule,
+    MatIconModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    FormsModule,
+    MatButtonModule,
     ToastrModule.forRoot({
       closeButton:true,
        
@@ -30,7 +51,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatInputModule,
     ToastrModule,
     FormsModule,
-    ReactiveFormsModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    NgxDropzoneModule,
+    SidebarComponent,
+    NavbarComponent,
+    HomeComponent,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
+    FormsModule,
+    MatSelectModule,
+    MatPaginatorModule,
+   
   ]
 
 })

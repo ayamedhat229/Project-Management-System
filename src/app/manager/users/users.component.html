@@ -1,0 +1,90 @@
+<section class="px-0">
+    <div class="header shadow-sm px-5 py-4 d-flex justify-content-between">
+        <h2>Users</h2>
+        <!-- <button class="btn-main"><i class="fa-solid fa-plus pe-2"></i>Add new Task</button> -->
+    </div>
+    <div class=" mt-5 mx-5 rounded bg-white shadow">
+        <div class="d-flex ">
+            <div class="col-5 px-4 py-4">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Search</mat-label>
+                  <input matInput placeholder="" type="text" [(ngModel)]="searchKey" (keyup.enter)="getAllUsers()">
+                </mat-form-field>
+              </div>
+              <div class="col-4 px-4 py-4">
+                <mat-form-field>
+                    <mat-label>Select Filter</mat-label>
+                    <mat-select [(ngModel)]="selectedFilter">
+                      <mat-option value="">None</mat-option>
+                      <mat-option value="userName">UserName</mat-option>
+                      <mat-option value="email">Email</mat-option>
+                      <mat-option value="country">Country</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+        </div>
+        
+        <table class="table shadow p-3 mb-5 bg-body-tertiary rounded-3">
+            <thead>
+                <tr>
+                    <th class="col">UserName</th>
+                    <th class="col">Status</th>
+                 
+                    <th class="col">Email</th>
+                    <th class="col">Phone Number</th>
+                    <th class="col">Country</th>
+<!--                   
+                    <th class="col">Date Created</th> -->
+                   
+                    <th class="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of users">
+                    <td>{{item.userName}}</td>
+                    <td class="td-style">
+                        <span class="status" [class]="item.isActivated ? 'active' : 'notActive'">
+                            {{item.isActivated ? 'Active' : 'Not Active'}}
+                        </span>
+                    </td>
+                 
+                    <td>{{item.email}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>{{item.country}}</td>
+                    <!-- <td>{{item.creationDate|date:'MMM d, y, h:mm:ss a'}}</td> -->
+                    <td>
+                        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="">
+                            <mat-icon class="">more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu" class="rounded-4 ps-3 pe-3">
+                            <button mat-menu-item>
+                                <i class="fa-solid fa-ban"></i>
+                                <span class="ps-3">Block</span>
+                            </button>
+                            <button mat-menu-item (click)="openDialog(item)">
+                                <i class="fa-solid fa-eye menu-icon"></i>
+                                <span class="ps-3">View</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+            </tbody>
+           
+           
+               
+              
+        </table>
+        <div class="my-3 p-2">
+            <mat-paginator [length]="tableOfUsers?.totalNumberOfRecords"
+            [pageSize]="tableOfUsers?.pageSize"
+            [pageIndex]="pageIndex"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePageEvent($event)"
+            aria-label="Select page">
+            </mat-paginator>
+        </div>
+    
+    </div>
+</section>
+
+

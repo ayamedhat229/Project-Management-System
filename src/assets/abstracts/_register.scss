@@ -1,0 +1,60 @@
+#register{
+    background-image: url(../../assets/Images/resetPass-background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+}
+.register-form{
+  width:75%;
+  //height: 80%;
+  background-color:rgba(49, 74, 89, 0.741);
+  border-radius: 16px;
+  margin: 20px 20px;
+  //padding: 8px 0px ;
+  //margin: 30px 15px;
+  h2{
+    color: rgba(239, 155, 40, 1);
+    position: relative;
+    &::after{
+        content: "";
+        width:16px;
+        height: 4px;
+        background-color:  rgba(239, 155, 40, 1);
+        position: absolute;
+        top:100%;
+        left: 1px;
+    }
+}
+}
+  span{
+    color:  rgba(239, 155, 40, 1);
+  }
+.logo{
+ width: 150px !important;
+ 
+}
+.picture{
+  width:150px;
+  height: 150px;
+  margin-bottom: 10px !important;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden !important;
+}
+a{
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+.show-password{
+  position: absolute;
+  right: 3px;
+  top:25px;
+  transform: translateY(-50%);
+}

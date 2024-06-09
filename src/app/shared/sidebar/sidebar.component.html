@@ -1,1 +1,14 @@
-<p>sidebar works!</p>
+<section class="bg-info vh-100">
+    <ul class="pt-5">
+        <ng-container *ngFor="let item of Menu">
+            <li *ngIf="item.isActive" class="text-white">
+                <a class="text-white" [routerLink]="[item.link]" routerLinkActive="bg-main-transparent">
+                    <span><i [class]="item.icon"></i></span>
+                    <span class="pt-3">{{item.text}}</span>
+                </a>
+                
+            </li>
+        </ng-container>
+       
+    </ul>
+</section>

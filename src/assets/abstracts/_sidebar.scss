@@ -1,0 +1,28 @@
+.bg-info{
+    background-color: #0E382F !important;
+    ul{ 
+        padding: 0px;
+        li{
+             list-style: none;
+             
+            a{
+                 text-decoration: none;
+                color: white;
+                display: block;
+                padding: 10px;
+                span{
+                    padding: 0px 10px;
+                    font-size: 23px;
+                    font-family: Montserrat;
+                   
+                   
+   
+                }
+            }
+        }
+    }
+    .bg-main-transparent{
+        background-color: #EF9B284D !important;
+        color:#EF9B28 !important;
+    }
+}

@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { AuthService } from '../service/auth.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +11,7 @@ import { AuthService } from '../service/auth.service';
 })
 export class LoginComponent implements OnInit{
   hide:boolean = false;
-  constructor(private _AuthService:AuthService, private _Toastr:ToastrService){}
+  constructor(private _AuthService:AuthService, private _Toastr:ToastrService, private _Router:Router){}
   ngOnInit(): void {
     
   }
@@ -22,14 +22,18 @@ export class LoginComponent implements OnInit{
 onSubmit(data:FormGroup){
   this._AuthService.onLoginUser(data.value).subscribe({
    next:(res)=>{
-    console.log(res)
+    localStorage.setItem('userToken',res.token);
+    this._AuthService.getProfile()
+    console.log(res);
+
    },
    error:(err)=>{
     console.log(err)
     this._Toastr.error('Login is not Success','Error')
    },
    complete:()=>{
-    this._Toastr.success('Login is Successfully','Success')
+    this._Toastr.success('Login is Successfully','Success');
+    this._Router.navigate(['/dashboard'])
    }
   })
 }

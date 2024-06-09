@@ -1,0 +1,15 @@
+.td-style{
+    padding-top: 10px !important;
+}
+.status{
+    color:white;
+    border-radius: 16px;
+    padding: 0.4rem 1rem;
+    margin-top: 10px;
+    &.active{
+        background-color: #009247;
+    }
+    &.notActive{
+        background-color: #922E25B2;
+    }
+}

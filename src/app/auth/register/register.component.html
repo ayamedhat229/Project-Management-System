@@ -1,1 +1,110 @@
-<p>register works!</p>
+<div id="register" class="container-fluid ">
+    <div class="row d-flex justify-content-center align-items-center ">
+    <div class="text-center pt-4">
+              <img src="../../../assets/Images/logo.svg">
+          </div>
+          <div class="register-form py-3">
+            <!-- <div class="text-center">
+                <img class="logo" src="../../../../../assets/images/logo.svg">
+            </div> -->
+           <div class="px-4">
+            
+            <span>Welcome to PMS</span>
+            <h2>Create New Account</h2>
+            <form [formGroup]=" registerForm" (ngSubmit)="onSubmit(registerForm)">
+            <div class="row">
+              <div class="col-12 pb-2">
+               <ngx-dropzone class="picture" (change)="onSelect($event)" [multiple]="false">
+                  <ngx-dropzone-label>Drop your image</ngx-dropzone-label>
+                  <ngx-dropzone-image-preview class="child" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files " [file]="f">
+                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                  </ngx-dropzone-image-preview>
+                </ngx-dropzone>
+              </div>
+                <div class="col-6">
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>User Name</mat-label>
+                  <input formControlName="userName" type="text" matInput placeholder="Enter your name">
+                  
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['userName'].errors&&registerForm.controls['userName'].touched" class="w-100">
+                  <p class="text-danger" *ngIf="registerForm.controls['userName'].errors['required']">userName is required</p>
+                  <p class="text-danger" *ngIf="registerForm.controls['userName'].errors['userName']">userName should be MaxLength 10</p>
+              </div>
+               
+                </div>
+                <div class="col-6">
+    
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Email</mat-label>
+                  <input formControlName="email" type="text" matInput placeholder="Enter your Email">
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['email'].errors&&registerForm.controls['email'].touched" class=" w-100">
+                  <p class="text-danger" *ngIf="registerForm.controls['email'].errors['required']">email is required</p>
+                  <p class="text-danger" *ngIf="registerForm.controls['email'].errors['email']">email should be valid mail</p>
+              </div>
+                </div>
+              
+              <div class="col-6">
+               
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Country</mat-label>
+                  <input formControlName="country" type="text" matInput placeholder="Enter your Country">
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['country'].errors&&registerForm.controls['country'].touched" class=" w-100 p-1">
+                  <p class="text-danger" *ngIf="registerForm.controls['country'].errors['required']">Country name is required</p>
+                  
+              </div>
+              </div>
+              <div class="col-6">
+               
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Phone Number</mat-label>
+                  <input formControlName="phoneNumber" type="text" matInput placeholder="Enter your PhoneNumber">
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['phoneNumber'].errors&&registerForm.controls['phoneNumber'].touched" class=" w-100 p-1">
+                  <p class="text-danger" *ngIf="registerForm.controls['phoneNumber'].errors['required']">Phone Number is required</p>
+                  
+              </div>
+              </div>
+              <div class="col-6">
+               
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Password</mat-label>
+                  <input  formControlName="password" class="position-relative"  [type]="hide ? 'password' : 'text'" matInput placeholder="Enter your Country">
+                  <a class="show-password" (click)="hide = !hide">
+                    <i class="fa-solid icon" [class]="hide ? 'fa-eye-slash' : 'fa-eye'"></i>
+                  </a>
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['password']?.errors && registerForm.controls['password']?.touched" class="w-100 p-1">
+                  <p class="text-danger" *ngIf="registerForm.controls['password']?.errors?.['required']">Password is required</p>
+                  <p class="text-danger" *ngIf="registerForm.controls['password']?.errors?.['pattern']">The password must end with a number</p>
+                </div>
+              </div>
+              <div class="col-6">
+               
+                <mat-form-field appearance="fill" class="w-100">
+                  <mat-label>Confirm password</mat-label>
+                  <input  formControlName="confirmPassword" class="position-relative"  [type]="hiden ? 'password' : 'text'" matInput placeholder="Enter Confirm Password">
+                  <a class="show-password" (click)="hiden = !hiden">
+                    <i class="fa-solid icon" [class]="hiden ? 'fa-eye-slash' : 'fa-eye'"></i>
+                  </a>
+                </mat-form-field>
+                <div *ngIf="registerForm.controls['password']?.errors && registerForm.controls['password']?.touched" class="w-100 p-1">
+                  <p class="text-danger" *ngIf="registerForm.controls['password']?.errors?.['required']">Confirm password is required</p>
+                  <p class="text-danger" *ngIf="registerForm.controls['password']?.errors?.['pattern']">The password must end with a number</p>
+                </div>
+              </div>
+                <div class="d-flex justify-content-between pb-3">
+                    <a [routerLink]="['/auth/login']" class="text-white">Login Now ?</a>
+                    <a class="text-white" (click)="openDialog()">Have code ?</a>
+                  </div>
+              </div>
+              <button class="main w-100 btn-main" >Register</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    
+      </div>
+ 
