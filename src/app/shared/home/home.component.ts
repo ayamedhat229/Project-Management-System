@@ -29,7 +29,7 @@ userChart(){
 
     },
     error:(err)=>{
-      console.log(err)
+      // console.log(err)
     },
     complete:()=>{
       this.newChart = new Chart('userChart', {
@@ -55,10 +55,10 @@ taskChart(){
   this._HomeService.getAllTasksSystem().subscribe({
     next:(res)=>{
       this.tasksCount=res;
-      console.log(this.tasksCount)
+      // console.log(this.tasksCount)
     },
     error:(err)=>{
-      console.log(err)
+      // console.log(err)
     },
     complete:()=>{
       this.newChart = new Chart('taskChart', {
