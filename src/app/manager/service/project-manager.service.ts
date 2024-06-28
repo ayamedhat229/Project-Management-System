@@ -22,4 +22,5 @@ export class ProjectManagerService {
   onDeleteProject(id:any):Observable<any>{
    return this._HttpClient.delete(`Project/${id}`)
   }
+
 }

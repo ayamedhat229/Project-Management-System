@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-reset-password',
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.scss']
 })
 export class ResetPasswordComponent implements OnInit{
-  hide:boolean = false;
-  hiden:boolean = false;
-  constructor(private _AuthService:AuthService, private _Toastr:ToastrService){}
+  hide:boolean = true;
+  hiden:boolean = true;
+  constructor(private _AuthService:AuthService, private _Toastr:ToastrService, private _Router:Router){}
   ngOnInit(): void {
     
   }
@@ -30,8 +31,12 @@ onSubmit(data:FormGroup){
       console.log(err);
       this._Toastr.error('Error')
     },
-    complete:()=>
-      this._Toastr.success('Success')
+    complete:()=>{
+      this._Toastr.success('Success');
+      this._Router.navigate(['/auth/login'])
+    }
+     
+      
   })
 }
 }

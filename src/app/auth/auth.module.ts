@@ -14,7 +14,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from '../app-routing.module';
 import { VerifyUserComponent } from './verify-user/verify-user.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangePasswordComponent } from '../dashboard/change-password/change-password.component';
 
 
 @NgModule({

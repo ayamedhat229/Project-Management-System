@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit{
-  hide:boolean = false;
+  hide:boolean = true;
   constructor(private _AuthService:AuthService, private _Toastr:ToastrService, private _Router:Router){}
   ngOnInit(): void {
     

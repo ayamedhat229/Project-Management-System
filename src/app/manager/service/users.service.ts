@@ -7,10 +7,13 @@ import { Observable } from 'rxjs';
 export class UsersService {
 
   constructor(private _HttpClient:HttpClient) { }
-  onGetAllUsers(param:any):Observable<any>{
-    return this._HttpClient.get('Users/Manager',{params:param})
+  onGetUser(param:any):Observable<any>{
+    return this._HttpClient.get('Users/',{params:param}) 
   }
   onGetUserById(id:any):Observable<any>{
     return this._HttpClient.get(`Users/${id}`)
+  }
+  onToggleActive(id:number):Observable<any>{
+    return this._HttpClient.put(`Users/${id}`,{})
   }
 }

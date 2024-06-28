@@ -6,12 +6,14 @@ import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
 
 import { AddEditProjectComponent } from './add-edit-project/add-edit-project.component';
+import { ViewProjectComponent } from './view-project/view-project.component';
 
 
 @NgModule({
   declarations: [
     ProjectsComponent,
-    AddEditProjectComponent
+    AddEditProjectComponent,
+    ViewProjectComponent
   ],
   imports: [
     CommonModule,

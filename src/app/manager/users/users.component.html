@@ -15,11 +15,11 @@
                 <mat-form-field>
                     <mat-label>Select Filter</mat-label>
                     <mat-select [(ngModel)]="selectedFilter">
-                      <mat-option value="">None</mat-option>
-                      <mat-option value="userName">UserName</mat-option>
-                      <mat-option value="email">Email</mat-option>
-                      <mat-option value="country">Country</mat-option>
-                    </mat-select>
+                        <mat-option value="">None</mat-option>
+                        <mat-option value="userName">UserName</mat-option>
+                        <mat-option value="email">Email</mat-option>
+                        <mat-option value="country">Country</mat-option>
+                      </mat-select>
                   </mat-form-field>
               </div>
         </div>
@@ -29,7 +29,6 @@
                 <tr>
                     <th class="col">UserName</th>
                     <th class="col">Status</th>
-                 
                     <th class="col">Email</th>
                     <th class="col">Phone Number</th>
                     <th class="col">Country</th>
@@ -57,9 +56,10 @@
                             <mat-icon class="">more_vert</mat-icon>
                         </button>
                         <mat-menu #menu="matMenu" class="rounded-4 ps-3 pe-3">
-                            <button mat-menu-item>
+                            <button mat-menu-item (click)="openDialogConfirmUser(item)">
                                 <i class="fa-solid fa-ban"></i>
-                                <span class="ps-3">Block</span>
+                                <span class="ps-3">
+                                    {{item.isActivated ? 'Block' : 'unBlock'}}</span>
                             </button>
                             <button mat-menu-item (click)="openDialog(item)">
                                 <i class="fa-solid fa-eye menu-icon"></i>

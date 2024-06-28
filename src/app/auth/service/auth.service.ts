@@ -48,6 +48,12 @@ export class AuthService {
   onChangePassword(data:any):Observable<any>{
     return this._HttpClient.put('Users/ChangePassword',data)
   }
+  getCurrentUser():Observable<any>{
+    return this._HttpClient.get('Users/currentUser')
+  }
+  updateCurrentUser(data:any):Observable<any>{
+   return this._HttpClient.put('Users/',data)
+  }
   logOut(){
     localStorage.clear();
     this._Router.navigate(['/auth/login'])

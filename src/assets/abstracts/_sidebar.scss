@@ -1,5 +1,6 @@
 .bg-info{
     background-color: #0E382F !important;
+    min-height: 100vh;
     ul{ 
         padding: 0px;
         li{
@@ -25,4 +26,10 @@
         background-color: #EF9B284D !important;
         color:#EF9B28 !important;
     }
+    
+}
+.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }

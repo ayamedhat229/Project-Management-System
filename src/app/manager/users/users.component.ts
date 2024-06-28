@@ -4,17 +4,19 @@ import { PageEvent } from '@angular/material/paginator';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { ConfirmUserComponent } from './confirm-user/confirm-user.component';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss']
 })
 export class UsersComponent implements OnInit {
-  length = 50;
-  pageSize = 5;
-  pageIndex = 0;
-  pageNumber =1;
-  pageSizeOptions = [5, 10, 50];
+  length=20;
+  pageSize=5;
+  pageIndex=0;
+  pageNumber=1;
+  pageSizeOptions=[5,10,20];
+
   totalNumberOfRecords:any[]=[]
   tableOfUsers:any;
   users:any[]=[];
@@ -27,33 +29,38 @@ ngOnInit(): void {
   this.getAllUsers()
 }
 getAllUsers(){
-  let param={
+  let params = {
     pageSize: this.pageSize,
     pageNumber: this.pageNumber,
     userName: '',
     email: '',
     country: ''
   };
+
   if (this.selectedFilter === 'userName') {
-    param.userName = this.searchKey;
+    params.userName = this.searchKey;
   } else if (this.selectedFilter === 'email') {
-    param.email = this.searchKey;
+    params.email = this.searchKey;
   } else if (this.selectedFilter === 'country') {
-    param.country = this.searchKey;
+    params.country = this.searchKey;
   } else {
-    param.userName = this.searchKey;
-    param.email = this.searchKey;
-    param.country = this.searchKey;
+    params.userName = this.searchKey;
+    params.email = this.searchKey;
+    params.country = this.searchKey;
   }
-  
-  this._UsersService.onGetAllUsers(param).subscribe({
+
+  this._UsersService.onGetUser(params).subscribe({
     next:(res)=>{
+      console.log(res)
       this.tableOfUsers=res;
-      this.users=res.data;
-      console.log(this.users)
+      this.users=res.data
+
     },
     error:(err)=>{
       console.log(err)
+    },
+    complete:()=>{
+      //tostar
     }
   })
 }
@@ -79,6 +86,33 @@ clickViewUser(id:any){
     error:(err)=>{
       console.log(err)
     },
+  })
+}
+openDialogConfirmUser(item:any): void {
+  const dialogRef = this.dialog.open(ConfirmUserComponent, {
+     data:item,
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log('The dialog was closed',result);
+    console.log(result)
+    
+    if(result){
+      this.ToggleActive(result)
+    }
+  });
+}
+ToggleActive(id:number){
+  this._UsersService.onToggleActive(id).subscribe({
+   next:(res)=>{
+    console.log(res)
+   },
+   error:(err)=>{
+    console.log(err)
+   },
+   complete:()=>{
+    this.getAllUsers()
+   }
   })
 }
 handlePageEvent(event: PageEvent) {

@@ -6,7 +6,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { AuthComponent } from './auth/auth.component';
 import { VerifyUserComponent } from './verify-user/verify-user.component';
-import { ChangePasswordComponent } from './change-password/change-password.component';
+import { ChangePasswordComponent } from '../dashboard/change-password/change-password.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'authentication',pathMatch:'full'},
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'forgot-password',component:ForgotPasswordComponent},
   {path:'reset-password',component:ResetPasswordComponent},
   {path:'verifyUser',component:VerifyUserComponent},
-  {path:'change-password',component:ChangePasswordComponent}
+  
   
 ];
 

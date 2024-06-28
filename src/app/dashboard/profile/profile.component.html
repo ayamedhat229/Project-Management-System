@@ -1,0 +1,82 @@
+<section>
+    <div class="container-fluid  shadow-sm mt-2 rounded-2 mb-3">
+        <div class="row">
+          <form class="" [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)">
+            <div class="col-12 pb-1 mt-5">
+              <ngx-dropzone class="picture" (change)="onSelect($event)" [multiple]="false">
+                 <ngx-dropzone-label>Drop your image</ngx-dropzone-label>
+                 <ngx-dropzone-image-preview class="child" ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files " [file]="f">
+                   <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                 </ngx-dropzone-image-preview>
+               </ngx-dropzone>
+             </div>
+            <div class="auth-card p-1 mb-3">
+              
+                <div class="pt-1">
+                    <label class="pb-1">userName</label>
+                    <mat-form-field class="w-100 custom-input">
+                        <mat-label>Enter your userName</mat-label>
+                        <input formControlName="userName" matInput placeholder="Enter your userName" required >
+                      </mat-form-field>
+                      <div *ngIf="profileForm.controls['userName'].errors&&profileForm.controls['userName'].touched" class="w-100">
+                        <p class="text-danger" *ngIf="profileForm.controls['userName'].errors['required']">userName is required</p>
+                        <p class="text-danger" *ngIf="profileForm.controls['userName'].errors['userName']">userName should be MaxLength 10</p>
+                    </div>
+                </div>
+                <div class="pt-1">
+                    <label class="pb-2">Email</label>
+                    <mat-form-field class="w-100 custom-input">
+                        <mat-label>Enter your email</mat-label>
+                        <input formControlName="email" matInput placeholder="email" required >
+                      </mat-form-field>
+                      <div *ngIf="profileForm.controls['email'].errors&&profileForm.controls['email'].touched" class="w-100 p-1">
+                        <p class="text-danger" *ngIf="profileForm.controls['email'].errors['required']">email is required</p>
+                        <p class="text-danger" *ngIf="profileForm.controls['email'].errors['email']">Email should be valid mail</p>
+                      </div>
+                </div>
+                <div class="pt-1">
+                  <label class="pb-1">Country</label>
+                  <mat-form-field class="w-100 custom-input">
+                      <mat-label>Enter your country</mat-label>
+                      <input formControlName="country" matInput placeholder="country" required >
+                    </mat-form-field>
+                    <div *ngIf="profileForm.controls['country'].errors&&profileForm.controls['country'].touched" class="w-100 p-1">
+                      <p class="text-danger" *ngIf="profileForm.controls['country'].errors['required']">country is required</p>
+                   
+                    </div>
+              </div>
+              <div class="pt-1">
+                <label class="pb-1">phoneNumber</label>
+                <mat-form-field class="w-100 custom-input">
+                    <mat-label>phoneNumber</mat-label>
+                    <input formControlName="phoneNumber" matInput placeholder="phoneNumber" required >
+                  </mat-form-field>
+                  <div *ngIf="profileForm.controls['phoneNumber'].errors&&profileForm.controls['phoneNumber'].touched" class="w-100 p-1">
+                    <p class="text-danger" *ngIf="profileForm.controls['phoneNumber'].errors['required']">phoneNumber is required</p>
+                    
+                  </div>
+            </div>
+            <div class="pt-1">
+               
+              <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Confirm password</mat-label>
+                <input  formControlName="confirmPassword" class="position-relative"  [type]="hide ? 'password' : 'text'" matInput placeholder="Enter password">
+                <a class="show-password" (click)="hide = !hide">
+                  <i class="fa-solid icon" [class]="hide ? 'fa-eye-slash' : 'fa-eye'"></i>
+                </a>
+              </mat-form-field>
+              <div *ngIf="profileForm.controls['confirmPassword']?.errors && profileForm.controls['confirmPassword']?.touched" class="w-100 p-1">
+                <p class="text-danger" *ngIf="profileForm.controls['confirmPassword']?.errors?.['required']">Confirm password is required</p>
+                <p class="text-danger" *ngIf="profileForm.controls['confirmPassword']?.errors?.['pattern']">The password must end with a number</p>
+              </div>
+            </div>
+             
+               <div class="d-flex justify-content-center">
+                <button  class="btn-main w-75 text-center">Save</button>
+               </div>
+            </div>
+        </form>
+          
+        </div>
+    </div>
+</section>

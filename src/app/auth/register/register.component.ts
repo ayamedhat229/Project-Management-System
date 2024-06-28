@@ -16,8 +16,8 @@ export class RegisterComponent implements OnInit{
   ngOnInit(): void {
     
   }
-hide : boolean = false;
-hiden : boolean = false;
+hide : boolean = true;
+hiden : boolean = true;
 imgSrc :any;
 registerForm = new FormGroup({
   userName : new FormControl('',[Validators.required, Validators.maxLength(10), Validators.minLength(5)]),

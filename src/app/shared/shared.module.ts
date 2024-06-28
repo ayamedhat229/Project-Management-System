@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import { DeleteTaskComponent } from './delete-task/delete-task.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
     SharedRoutingModule,
     MatFormFieldModule,
     MatInputModule,
+    DragDropModule,
     FormsModule,
     NgxDropzoneModule,
     MatDialogModule,
@@ -57,6 +59,7 @@ import { DeleteTaskComponent } from './delete-task/delete-task.component';
     SidebarComponent,
     NavbarComponent,
     HomeComponent,
+    DragDropModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,

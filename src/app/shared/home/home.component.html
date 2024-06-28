@@ -1,6 +1,21 @@
 <section>
     <div class="container-fluid background-home align-content-center ">
-      <p class=" ps-2 text-white">Welcome <span class="text-warning">User</span></p>
+      <p class=" ps-2 text-white">Welcome <span class="text-warning">{{userName}}</span></p>
       <p class="ps-2 pt-1 text-white">You can add project and assign tasks to your team</p>
     </div>
+   <div class="container-fluid" *ngIf="userRole == 'Manager'">
+    <div class="row py-1 mt-5 d-flex justify-content-center">
+      <div id="chartUser" class="bg-white col-5  shadow-sm chart border p-5 mb-3  rounded-3">
+        <h2 class="text-gray">Employees</h2>
+          <canvas id="userChart" class="userChart">{{newChart}}</canvas>
+        </div>
+        <div id="chartTask" class="bg-white col-5 shadow-sm chart  border ms-3 p-5 mb-3 rounded-3">
+          <h2 class="text-gray">Tasks</h2>
+            <canvas id="taskChart" class="userChart">{{newChart}}</canvas>
+          </div>
+    </div>
+   </div>
+   
+      
+       
 </section>

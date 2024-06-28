@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/auth.service';
+import { AuthService } from '../../auth/service/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./change-password.component.scss']
 })
 export class ChangePasswordComponent implements OnInit{
-  hide :boolean = false;
+  hide :boolean = true;
   constructor(private _AuthService:AuthService, private _Toastr:ToastrService){}
 ngOnInit(): void {
   

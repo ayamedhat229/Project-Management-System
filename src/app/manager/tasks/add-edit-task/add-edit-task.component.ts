@@ -73,7 +73,7 @@ this._projectManagerService.onGetAllProjectManager(params).subscribe({
 })
 }
 getListUsersById(params:any){
-  this._userService.onGetAllUsers(params).subscribe({
+  this._userService.onGetUser(params).subscribe({
     next:(res)=>{
       this.users=res.data
       console.log(this.users)

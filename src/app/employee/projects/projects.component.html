@@ -1,1 +1,45 @@
-<p>projects works!</p>
+<section class="px-0">
+    <div class="header shadow-sm px-5  py-4 d-flex justify-content-between">
+        <h2>Projects</h2>
+        <!-- <button class="btn-main" routerLink="/dashboard/manager/projects/add-project"><i class="fa-solid fa-plus pe-2"></i>Add new project</button> -->
+    </div>
+    <div class=" mt-5 mx-5 rounded bg-white shadow">
+        <div class="col-5 px-4 py-4">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Search</mat-label>
+              <input matInput placeholder="" type="text" [(ngModel)]="searchKey" (keyup.enter)="getAllProject()">
+            </mat-form-field>
+          </div>
+        <table class="table shadow p-3 mb-5 bg-body-tertiary ">
+            <thead class="">
+                <tr>
+                    <th class="col">Title</th>
+                    <th class="col">Description</th>
+                    <th class="col">Num Task</th>
+                    <th class="col">Modification date</th>
+                    <th class="col">Date created</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tableOfPRojectsEmployee">
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.task.status}}</td>
+                    <td>{{item.modificationDate|date:'MMM d, y, h:mm:ss a'}}</td>
+                    <td>{{item.creationDate|date:'MMM d, y, h:mm:ss a'}}</td>
+                  
+                   
+                </tr>
+            </tbody>
+        </table>
+        <div class="my-3 p-2">
+            <mat-paginator [length]="projects?.totalNumberOfRecords"
+            [pageSize]="projects?.pageSize"
+            [pageIndex]="pageIndex"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="handlePageEvent($event)"
+            aria-label="Select page">
+            </mat-paginator>
+        </div>
+    </div>
+</section>
