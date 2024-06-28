@@ -1,7 +1,5 @@
 [build]
   command = "ng build"
-  commandOrigin: config
-  publish: /opt/build/repo/dist/PMS
    publishOrigin: config
   functions = "netlify/functions"
   functionsDirectory: /opt/build/repo/netlify/functions
