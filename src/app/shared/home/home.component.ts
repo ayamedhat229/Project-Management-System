@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import Chart from 'chart.js/auto';
-import { getRelativePosition } from 'chart.js/helpers';
+// import Chart from 'chart.js/auto';
+// import { getRelativePosition } from 'chart.js/helpers';
 import { HomeService } from '../home.service';
 @Component({
   selector: 'app-home',
@@ -32,17 +32,17 @@ userChart(){
       console.log(err)
     },
     complete:()=>{
-      this.newChart = new Chart('userChart', {
-        type: 'bar',
-        data: {
-          labels: ['activatedEmployeeCount', 'deactivatedEmployeeCount'],
-          datasets: [{
-            label: 'Count',
-            data: [44,7],
-            backgroundColor: ['#EF9B28', '#31595193']
-          }]
-        }
-      });
+      // this.newChart = new Chart('userChart', {
+      //   type: 'bar',
+      //   data: {
+      //     labels: ['activatedEmployeeCount', 'deactivatedEmployeeCount'],
+      //     datasets: [{
+      //       label: 'Count',
+      //       data: [44,7],
+      //       backgroundColor: ['#EF9B28', '#31595193']
+      //     }]
+      //   }
+      // });
     }
 }
 
@@ -61,17 +61,17 @@ taskChart(){
       console.log(err)
     },
     complete:()=>{
-      this.newChart = new Chart('taskChart', {
-        type: 'bar',
-        data: {
-          labels: ['toDo', 'inProgress','done'],
-          datasets: [{
-            label: 'Count',
-            data: [63,19,19],
-            backgroundColor: ['#EF9B28', '#31595193', '#c77808f6']
-          }]
-        }
-      });
+      // this.newChart = new Chart('taskChart', {
+      //   type: 'bar',
+      //   data: {
+      //     labels: ['toDo', 'inProgress','done'],
+      //     datasets: [{
+      //       label: 'Count',
+      //       data: [63,19,19],
+      //       backgroundColor: ['#EF9B28', '#31595193', '#c77808f6']
+      //     }]
+      //   }
+      // });
     }
   })
 }
