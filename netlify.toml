@@ -1,7 +1,6 @@
 [build]
   command = "ng build"
-   publishOrigin: config
-  functions = "netlify/functions"
+
   functionsDirectory: /opt/build/repo/netlify/functions
  
   [[redirects]]
