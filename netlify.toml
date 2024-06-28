@@ -1,8 +1,7 @@
 [build]
   command = "ng build"
-
-  functionsDirectory: /opt/build/repo/netlify/functions
- 
+  functions = "netlify/functions"
+  publish = "dist/PMS"
   [[redirects]]
    from = "/*"
    to = "/index.html"
