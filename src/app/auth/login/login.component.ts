@@ -33,7 +33,7 @@ onSubmit(data:FormGroup){
    },
    complete:()=>{
     this._Toastr.success('Login is Successfully','Success');
-    this._Router.navigate(['/dashboard'])
+    this._Router.navigate(['/dashboard/home'])
    }
   })
 }
