@@ -1,7 +1,11 @@
 [build]
   command = "ng build"
+  commandOrigin: config
+  publish: /opt/build/repo/dist/PMS
+   publishOrigin: config
   functions = "netlify/functions"
-  publish = "dist/PMS"
+  functionsDirectory: /opt/build/repo/netlify/functions
+ 
   [[redirects]]
    from = "/*"
    to = "/index.html"
